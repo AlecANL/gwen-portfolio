@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Elisas's Portfolio</h1>
+<h1 align="center">Gwen Stacy Portfolio</h1>
 
 <div align="center">
    Solution for a project from  <a href="https://leonidasesteban.com/proyectos" target="_blank">LeonidasEsteban.com</a>.
