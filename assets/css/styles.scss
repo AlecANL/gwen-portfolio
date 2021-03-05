@@ -39,8 +39,12 @@ $breakpoints: (
     border: 1px solid red;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
+  background-color: var(--just-black);
   font-family: 'Arvo', serif;
 }
 ul {
@@ -50,25 +54,41 @@ ul {
 a {
   text-decoration: none;
 }
+img {
+  max-inline-size: 100%;
+}
+h1,
+h2 {
+  color: var(--just-white);
+}
 .wrapper {
+  position: relative;
   max-inline-size: 1400px;
   margin: auto;
 }
 /* Header */
+header {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  z-index: 10;
+}
 .header-content {
-  @include devMode(red);
-  position: relative;
   display: flex;
   justify-content: space-between;
   padding-block: 20px;
   padding-inline: 16px;
+  background-color: var(--just-black);
   p {
     margin: 0;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1%;
+    text-transform: capitalize;
+    color: var(--just-white);
   }
-  @include from(kindle) {
+  @include from(l) {
     .icon-menu {
       display: none;
     }
@@ -76,25 +96,40 @@ a {
 }
 .navigation {
   &__list {
-    @include devMode(blue);
     position: fixed;
+    z-index: 100;
     inset-inline-start: 0;
     inset-inline-end: 0;
-    inset-block-start: 12%;
+    inset-block-start: 0;
     inset-block-end: 0;
-    display: none;
+    visibility: hidden;
+    margin: 0;
     padding-block: 100px;
+    background-color: var(--just-black);
     text-align: center;
+    clip-path: circle(10% at 87% 87%);
+    transition: all 0.3s ease-in-out;
   }
   &__list li {
     margin-block-end: 48px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
-  @include from(kindle) {
+  &__list a {
+    color: var(--gray);
+    font-size: 32px;
+    &:hover {
+      color: var(--just-white);
+    }
+  }
+  @include from(l) {
     &__list {
       position: initial;
-      display: block;
+      visibility: visible;
       padding: 0;
       margin: 0;
+      background-color: transparent;
+      clip-path: circle(100%);
     }
     &__list li {
       display: inline-block;
@@ -104,15 +139,27 @@ a {
     }
     &__list a {
       padding-inline: 20px;
+      font-size: 14px;
     }
   }
 }
+.close-icon {
+  position: absolute;
+  inset-inline-end: 16px;
+  display: none;
+  fill: var(--sky-blue);
+  z-index: 1000;
+  @include from(l) {
+    display: none;
+  }
+}
+
 /* Header End*/
 
 /* Hero */
 .hero-content {
-  @include devMode(green);
-  margin-block: 80px;
+  margin-block: 160px;
+  margin-block-end: 80px;
   padding-inline: 16px;
   h1 {
     line-height: 26.5px;
@@ -131,34 +178,226 @@ a {
   }
   @include from(kindle) {
     h1 {
-      font-size: 64px;
-      line-height: 76px;
+      font-size: 48px;
+      line-height: 48px;
     }
   }
   @include from(l) {
     padding-inline: 89px;
+    // padding-block: 10px;
     h1 {
-      font-size: 70px;
+      font-size: 64px;
       line-height: 80px;
     }
     p {
-      @include devMode(blue);
       inline-size: 580px;
     }
   }
 }
 /* Hero End */
 
+/* Main */
+.main-content {
+  padding-block-start: 64px;
+  padding-inline: 16px;
+  h2 {
+    font-size: 24px;
+    margin-block: 0;
+    line-height: 26px;
+  }
+  @include from(m) {
+    padding-inline: 100px;
+    h2 {
+      font-size: 32px;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+  @include from(kindle) {
+    padding-inline: 150px;
+  }
+  @include from(l) {
+    padding-inline: 200px;
+    padding-block-start: 0;
+    h2 {
+      font-size: 40px;
+      line-height: 40px;
+      margin-block-start: 160px;
+      margin-block-end: 80px;
+    }
+  }
+  @include from(x) {
+    padding-inline: 292px;
+    h2 {
+      font-size: 64px;
+      line-height: 76px;
+    }
+  }
+}
+.project {
+  margin-block-start: 40px;
+  img {
+    margin-block-end: 16px;
+  }
+  h3 {
+    margin-block: 16px;
+  }
+  .buttons .btn {
+    inline-size: 100%;
+    margin-block-end: 16px;
+    text-align: center;
+  }
+  h3,
+  span {
+    color: var(--soft-gray);
+  }
+  @include from(s) {
+    .buttons {
+      display: flex;
+    }
+    .buttons .btn {
+      inline-size: 40%;
+      margin-inline-end: 16px;
+    }
+  }
+}
+/* Main End */
+
+/* Work Brands */
+.work-brands-content {
+  margin-block-start: 64px;
+  margin-block-end: 82px;
+  padding-inline: 16px;
+  h3 {
+    margin-block-end: 43px;
+    color: var(--just-white);
+    font-size: 24px;
+    line-height: 26px;
+  }
+  @include from(m) {
+    padding-inline: 32px;
+    h3 {
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+  @include from(l) {
+    padding-inline: 89px;
+    h3 {
+      font-size: 64px;
+      line-height: 76px;
+    }
+  }
+}
+.brands-images {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  img {
+    inline-size: 216px;
+    block-size: 155px;
+  }
+  @include from(m) {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  @include from(l) {
+    justify-content: space-between;
+  }
+}
+/* Work Brands End */
+
+/* Contact */
+.contact-content {
+  margin-block-end: 64px;
+  padding-inline: 16px;
+  h3 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  h3 a {
+    color: var(--sky-blue);
+  }
+  span {
+    color: var(--just-white);
+  }
+  @include from(l) {
+    h3 {
+      font-size: 64px;
+      line-height: 76px;
+    }
+    h3 a {
+      font-size: 64px;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+/* Contact End */
+
+/* Footer */
+.footer-content {
+  padding-inline: 32px;
+  margin-block-end: 80px;
+  @include from(m) {
+    display: flex;
+    gap: 100px;
+  }
+}
+.feed-social ul li,
+.contact ul li,
+a {
+  margin-block-end: 16px;
+  color: var(--just-white);
+  font-size: 14px;
+}
+.feed-social p,
+.contact p {
+  color: var(--gray);
+  font-size: 18px;
+  font-weight: bold;
+}
+.contact {
+  margin-block-start: 40px;
+  @include from(m) {
+    margin-block-start: 0;
+  }
+}
+
+/* Footer End */
+
 /* Buttons */
 .btn {
   inline-size: 243px;
   block-size: 51px;
   border: none;
-  border-radius: 4px;
   font-size: 18px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.98);
+  }
 }
 .btn--purple {
   background-color: var(--soft-blue);
   color: var(--just-white);
 }
+.btn--initial {
+  background-color: transparent;
+  color: var(--soft-blue);
+  border: 1px solid var(--soft-blue);
+}
 /* Buttons End*/
+
+/* Helpers */
+.active {
+  // display: block;
+  visibility: visible;
+  clip-path: circle(75%);
+  transition: all 0.3s ease-in-out;
+}
+/* Helpers End */

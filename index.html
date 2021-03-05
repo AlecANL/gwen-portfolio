@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Gwen Portfolio" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Gwen Stacy Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://alecanl.github.io/gwen-portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/AlecANL/gwen-portfolio/raw/main/assets/img/design.png"
+    />
+    <meta
+      property="og:description"
+      content="Diseño y código de punta a punta de experiencias digitales innovadoras, sostenibles y flexibles."
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap"
@@ -18,7 +34,7 @@
         <div class="header-content">
           <p>gwen stacy</p>
           <nav class="navigation">
-            <ul class="navigation__list">
+            <ul class="navigation__list" id="nav">
               <li><a href="#">home</a></li>
               <li><a href="#projects">proyectos</a></li>
               <li><a href="#">testimonios</a></li>
@@ -30,6 +46,23 @@
             alt="menu icon"
             class="icon-menu"
           />
+          <!-- <img
+            class="close-icon"
+            src="./assets/img/icons/close.svg"
+            alt="close icon"
+          /> 
+        -->
+          <svg
+            class="close-icon"
+            height="24px"
+            viewBox="0 0 329.26933 329"
+            width="24px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"
+            />
+          </svg>
         </div>
       </div>
     </header>
@@ -49,5 +82,84 @@
         </div>
       </div>
     </section>
+    <main>
+      <div class="wrapper">
+        <div class="main-content" id="projects">
+          <h2>El trabajo que hago y los proyectos a los que he ayudado</h2>
+          <section class="projects" id="projects-list">
+            <!-- <article class="project">
+              <img src="./assets/img/niko.png" alt="niko project" />
+              <span>Niko</span>
+              <h3>
+                Creando un diseño visual elegante para una plataforma de
+                calzado.
+              </h3>
+              <div class="buttons">
+                <button class="btn btn--initial">
+                  Ver código del proyecto
+                </button>
+                <button class="btn btn--purple">
+                  Ver detalle del proyecto
+                </button>
+              </div>
+            </article> -->
+          </section>
+        </div>
+      </div>
+    </main>
+    <section class="work-brands">
+      <div class="wrapper">
+        <div class="work-brands-content">
+          <h3>
+            He tenido el privilegio de trabajar con múltiples empresas como.
+          </h3>
+          <div class="brands-images">
+            <img src="./assets/img/nike.svg" alt="nike logo" />
+            <img src="./assets/img/adidas.svg" alt="adidas logo" />
+            <img src="./assets/img/telcel.svg" alt="telcel logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrapper">
+        <div class="contact-content">
+          <h3>
+            <span
+              >¿Quieres trabajar conmigo o simplemente tomar un café? -
+            </span>
+            <span>¡Hazme ping!</span>
+          </h3>
+          <h3>
+            <a href="mailto:gwenstacy@gmail.com">gwenstacy@gmail.com</a>
+          </h3>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="wrapper">
+        <div class="footer-content">
+          <div class="feed-social">
+            <p>Redes sociales</p>
+            <ul>
+              <li>Instagram</li>
+              <li>Youtube</li>
+              <li>Linkedin</li>
+            </ul>
+          </div>
+          <div class="contact">
+            <p>Contacto</p>
+            <ul>
+              <li>
+                <a href="mailto:gwenstacy@gmail.com">gwenstacy@gmail.com</a>
+              </li>
+              <li>(405) 555-0128</li>
+              <li>Detalles de facturación</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./assets/js/app.js"></script>
   </body>
 </html>

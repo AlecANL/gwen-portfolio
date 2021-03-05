@@ -26,4 +26,4 @@
 
 ## Overview
 
-<!-- ![screenshot](/assets/img/design.png) -->
+![screenshot](/assets/img/design.png)
