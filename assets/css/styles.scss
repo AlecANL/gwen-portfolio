@@ -88,6 +88,8 @@ header {
     text-transform: capitalize;
     color: var(--just-white);
   }
+  svg.icon-menu {
+  }
   @include from(l) {
     .icon-menu {
       display: none;
